@@ -63,8 +63,30 @@ a{color:inherit;text-decoration:none}
 .hero-stats span{font-size:.87rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 
 .hero-img{position:relative}
-.img-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);aspect-ratio:4/5}
-.img-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,22,40,.5))}
+.img-wrap{
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+    aspect-ratio:4/5;
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0,0,0,.3) 15%,
+        rgba(0,0,0,.8) 30%,
+        rgba(0,0,0,1) 45%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0,0,0,.3) 15%,
+        rgba(0,0,0,.8) 30%,
+        rgba(0,0,0,1) 45%
+    );
+}.img-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,22,40,.5))}
 .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 .badge-float{position:absolute;bottom:24px;left:-20px;background:var(--surface);border:1px solid var(--border);padding:12px 18px;border-radius:12px;font-size:.88rem;font-weight:600;color:#fff;box-shadow:var(--shadow)}
 .badge-float i{color:var(--accent);margin-right:6px}
